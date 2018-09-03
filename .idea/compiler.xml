@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="micro_service_cloud_api" />
+        <module name="micro_service_cloud_consumer_dept_80" />
+        <module name="micro_service_cloud_provider_dept_8001" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
