@@ -11,6 +11,7 @@
         <module>micro_service_cloud_api</module>
         <module>micro_service_cloud_provider_dept_8001</module>
         <module>micro_service_cloud_consumer_dept_80</module>
+        <module>micro_service_cloud_eureka_server_7001</module>
     </modules>
     <packaging>pom</packaging>
 

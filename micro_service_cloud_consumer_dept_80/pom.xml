@@ -11,6 +11,11 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <dependencies>
+        <!--eureka  server端-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.gaoxiong.springcloud</groupId>
             <artifactId>micro_service_cloud_api</artifactId>

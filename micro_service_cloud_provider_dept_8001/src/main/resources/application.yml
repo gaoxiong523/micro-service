@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: dept-8001
+    name: dept-provider-8001
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
@@ -21,4 +21,14 @@ mybatis:
 #  mapper-locations:
 #    - classpath: mybatis/mapper/**/*.xml                            #映射文件
   configuration:
-    cache-enabled: true                                           #开启二级缓存
+    cache-enabled: true #开启二级缓存
+eureka:
+  instance:
+    hostname: dept-8001-provider
+    instance-id: dept-8001-provider
+    prefer-ip-address: true   #路径显示IP信息
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/

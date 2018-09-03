@@ -1,2 +1,13 @@
 server:
   port: 80
+eureka:
+  instance:
+    hostname: dept-80-consumer
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+spring:
+  application:
+    name: dept-consumer-80
