@@ -24,11 +24,12 @@ mybatis:
     cache-enabled: true #开启二级缓存
 eureka:
   instance:
-    hostname: dept-8001-provider
+    hostname: dept8001provider
     instance-id: dept-8001-provider
     prefer-ip-address: true   #路径显示IP信息
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:7001/eureka/
+      #defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://eureka-server7003:7003/eureka/,http://eureka-server7002:7002/eureka/,http://eureka-server7001:7001/eureka/
