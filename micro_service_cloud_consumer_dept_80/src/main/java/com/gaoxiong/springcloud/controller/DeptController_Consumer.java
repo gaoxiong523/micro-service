@@ -21,7 +21,7 @@ public class DeptController_Consumer {
     /**
      * 使用restTemplate 简单调用接口
      */
-    private static final String REST_URL_PREFIX = "http://localhost:8001";
+    private static final String REST_URL_PREFIX = "http://microservicecloud-dept/";
     @Autowired
     private RestTemplate restTemplate;
 

@@ -78,3 +78,25 @@ eureka:
       defaultZone: http://eureka-server7001:7001/eureka/,http://eureka-server7002:7002/eureka/ #设置 与eureka server 交互的地址查询服务和注册服务
   instance:
     hostname: eureka-server7003  # eureka 服务端的实例名称
+
+
+**CAP原则**
+传统的ACID
+A(Atomicity)原子性
+C(Consistency)一致性
+I(Isolation)独立性
+D(Durability)持久性
+
+CAP
+C:Consistency (强一致性)
+A:Availability(可用性)
+P:Partition tolerance(分区容错性)
+ 
+ **Ribbon负载均衡**
+ Ribbon是消费方客户端负载均衡
+ client:
+     fetch-registry: true
+     register-with-eureka: true
+     客户端这两个配置一定要分清楚状况是开和关
+ 集群负载均衡时, Ribbon是通过 application的名字拿到微服务的
+ private static final String REST_URL_PREFIX = "http://microservicecloud-dept/";

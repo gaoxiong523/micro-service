@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: dept-provider-8001
+    name: microservicecloud-dept
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
