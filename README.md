@@ -100,3 +100,15 @@ P:Partition tolerance(分区容错性)
      客户端这两个配置一定要分清楚状况是开和关
  集群负载均衡时, Ribbon是通过 application的名字拿到微服务的
  private static final String REST_URL_PREFIX = "http://microservicecloud-dept/";
+ 
+ 多个同样的服务提供者集群,服务的名字一定不能改
+ Ribbon 默认提供的几种规则
+ 1.RoundRobinRule 轮询
+ 2.RandomRule 随机
+ 3.AvailabilityFilteringRule 会先过滤掉由于多次访问故障而处于断路器跳闸状态的服务,还有并发的链接数量超过阈值的服务,然后对剩余的服务列表按照轮询策略进行访问
+ 4.WeightedResponseTimeRule 根据平均响应时间计算所有服务的权重,响应时间越快服务的权重越大被选中的怪率越高.刚启动时如果统计信息不足,则使用RoundRobinRule策略,等统计信息足够,会切换到WeightedResponseTimeRule
+ 5.RetryRule 会按照RoundRobinRule的策略获取服务,如果获取服务失败则在指定时间内会进行重试,获取可用的服务
+ 6.BestAvailableRule 会过滤掉由于多次访问故障而处于断路器跳闸状态的服务,然后选择一个并发量最小的服务
+ 7.ZoneAvoidanceRule 默认规则,复合判断server所在区域的性能和server的可用性选择服务器
+ 
+ Ribbon 的自定义规则:
