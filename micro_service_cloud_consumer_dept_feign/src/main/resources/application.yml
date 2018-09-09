@@ -1,0 +1,16 @@
+
+spring:
+  application:
+    name: microservicedept-feign
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: dept-8099-consumer-feign
+    instance-id: dept-8099-consumer-feign
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-server7003:7003/eureka/,http://eureka-server7002:7002/eureka/,http://eureka-server7001:7001/eureka/
+server:
+  port: 8099

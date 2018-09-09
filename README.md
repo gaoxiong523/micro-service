@@ -117,3 +117,15 @@ P:Partition tolerance(分区容错性)
  Ribbon 的自定义规则:
  @RibbonClient(name = "MICROSERVICECLOUD-DEPT",configuration = MyselfRule.class)
  在启动该微服务的时候就能取加载我们自定义Ribbon配置类,从而使配置生效
+ 注意:自定义的规则 不能放在 主启动类的同级包下, 也既是不能在@compentscan包下
+ Feign:
+ Feign是一个生命是的WebService客户端.使用Feign能让编写 Web Service 客户端更加简单,它的使用方法是定义
+ 一个接口,然后在上面添加注解,同时也支持JAX-RS标准的注解.Feign也支持可插拔式的编码器和解码器.Spring Cloud
+ 对Feign进行了封装,使其支持了Spring MVC标准注解和HttpMessageConverters. Feign可以与Eureka和Ribbon组合使用
+ 以支持负载均衡.
+  1.定义接口
+  2.打上注解
+  Feign集成了Ribbon
+  利用Ribbon维护了服务列表信息,并且通过轮询实现了客户端的负载均衡.而与Ribbon不同的是,
+  通过Feign只需要定义服务绑定接口且以声明式的方法,优雅而简单的实现了服务调用.
+  扩展,Feign的自定义负载均衡: 可参考Ribbon 的自定义规则 ,只需要把自定义的规则,配置为一个bean 注入即可,
