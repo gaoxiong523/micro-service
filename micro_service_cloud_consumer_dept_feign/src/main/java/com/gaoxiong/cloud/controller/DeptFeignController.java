@@ -13,7 +13,7 @@ import java.util.List;
  * @Description TODO
  * @date 2018/9/9 13:46
  */
-@RestController
+@RestController("/feignConsumer")
 public class DeptFeignController {
     @Autowired
     private DeptClientService deptClientService;

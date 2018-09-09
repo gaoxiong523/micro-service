@@ -15,7 +15,7 @@ import java.util.List;
  * @Description TODO
  * @date 2018/9/9 13:40
  */
-@FeignClient(value = "microservicecloud-dept")
+@FeignClient(value = "microservicecloud-dept",fallbackFactory = DeptClientServiceFallbackFactory.class)
 public interface DeptClientService {
 
     @PostMapping(value = "/dept/add")
