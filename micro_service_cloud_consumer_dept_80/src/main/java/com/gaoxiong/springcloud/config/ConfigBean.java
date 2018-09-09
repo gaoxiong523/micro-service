@@ -30,8 +30,10 @@ public class ConfigBean {
      * 负载均衡的轮询规则切换为 随机
      * @return
      */
-    @Bean
+//    @Bean
     public IRule myRule () {
         return new RandomRule();
     }
+
+
 }

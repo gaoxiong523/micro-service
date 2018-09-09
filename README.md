@@ -78,7 +78,10 @@ eureka:
       defaultZone: http://eureka-server7001:7001/eureka/,http://eureka-server7002:7002/eureka/ #设置 与eureka server 交互的地址查询服务和注册服务
   instance:
     hostname: eureka-server7003  # eureka 服务端的实例名称
-
+**关于unavailable-replicas的一点说明**
+在单机环境下进行 服务中心集群演示的时候 我们会遇到这种情况, 我们配置的注册中心,都是显示在unavailable-replicas列表中,
+有心的朋友,可能会发现这个问题, 虽然不影响我们测试,但是 感觉还是哪里不对.
+原因可参考 https://blog.csdn.net/wangfei0904306/article/details/79056083 
 
 **CAP原则**
 传统的ACID
@@ -112,3 +115,5 @@ P:Partition tolerance(分区容错性)
  7.ZoneAvoidanceRule 默认规则,复合判断server所在区域的性能和server的可用性选择服务器
  
  Ribbon 的自定义规则:
+ @RibbonClient(name = "MICROSERVICECLOUD-DEPT",configuration = MyselfRule.class)
+ 在启动该微服务的时候就能取加载我们自定义Ribbon配置类,从而使配置生效
