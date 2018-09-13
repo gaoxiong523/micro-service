@@ -1,5 +1,6 @@
 package com.gaoxiong.springcloud.service;
 
+import com.gaoxiong.fallback.DeptClientServiceFallbackFactory;
 import com.gaoxiong.springcloud.entities.Dept;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

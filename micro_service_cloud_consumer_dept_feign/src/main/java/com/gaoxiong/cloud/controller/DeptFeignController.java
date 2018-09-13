@@ -3,6 +3,7 @@ package com.gaoxiong.cloud.controller;
 import com.gaoxiong.springcloud.entities.Dept;
 import com.gaoxiong.springcloud.service.DeptClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
  * @Description TODO
  * @date 2018/9/9 13:46
  */
-@RestController("/feignConsumer")
+@RestController()
 public class DeptFeignController {
     @Autowired
     private DeptClientService deptClientService;

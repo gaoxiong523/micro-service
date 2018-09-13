@@ -11,6 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableFeignClients(basePackages = {
         "com.gaoxiong.springcloud"
 })
+@ComponentScan(basePackages = {"com.gaoxiong"})
 public class MicroServiceCloudConsumerDeptFeignApplication {
 
     public static void main ( String[] args ) {

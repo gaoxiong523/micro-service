@@ -138,4 +138,8 @@ P:Partition tolerance(分区容错性)
   
  客户端熔断:
  理解还不够清晰,需要加强理解
+ 
+ 关于Feign 的fallbackFactory 的扫描以及应该放的位置
+ @ComponentScan(basePackages = {"com.gaoxiong"})
+学习过程中,当使用了 这个注解的时候会造成扫描不到controller 的现象,解决方法,扫描层级提高一级...没搞懂
   

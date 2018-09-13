@@ -1,6 +1,7 @@
-package com.gaoxiong.springcloud.service;
+package com.gaoxiong.fallback;
 
 import com.gaoxiong.springcloud.entities.Dept;
+import com.gaoxiong.springcloud.service.DeptClientService;
 import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
 
