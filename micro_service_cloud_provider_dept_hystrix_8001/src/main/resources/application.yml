@@ -5,7 +5,7 @@ server:
 spring:
   profiles: 8001
   application:
-    name: microservicecloud-dept
+    name: microservicecloud-dept-8001
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
@@ -48,7 +48,7 @@ server:
 spring:
   profiles: 8002
   application:
-    name: microservicecloud-dept
+    name: microservicecloud-dept-8002
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
@@ -91,7 +91,7 @@ server:
 spring:
   profiles: 8003
   application:
-    name: microservicecloud-dept
+    name: microservicecloud-dept-8003
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver

@@ -179,6 +179,12 @@ P:Partition tolerance(分区容错性)
         web:
           exposure:
             include: hystrix.stream
+   监控端配置
+            management:
+                  endpoints:
+                    web:
+                      exposure:
+                        include: turbine.stream
 参考网址https://blog.csdn.net/zzhou1990/article/details/79098814
-关于聚合监控,还有问题,需要解决terbine 的问题
-            
+关于聚合监控,还有问题,需要解决turbine 的问题
+https://blog.csdn.net/ityouknow/article/details/72625646            

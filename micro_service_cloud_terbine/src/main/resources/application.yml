@@ -2,11 +2,11 @@ server:
   port: 9002
 spring:
   application:
-    name: terbine
+    name: turbine
 turbine:
   aggregator:
     clusterConfig: default                                     #指定聚合哪些集群，多个使用”,”分割，默认为default
-  appConfig: microservicecloud-dept   #配置Eureka中的serviceId列表，表明监控哪些服务
+  appConfig: microservicecloud-dept-8001,microservicecloud-dept-8002,microservicecloud-dept-8003   #配置Eureka中的serviceId列表，表明监控哪些服务
   cluster-name-expression: "'default'"
 eureka:
   client:
@@ -16,7 +16,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
+        include: turbine.stream
 
 # turbine.clusterNameExpression ：
 # 1. clusterNameExpression指定集群名称，默认表达式appName；此时：turbine.aggregator.clusterConfig需要配置想要监控的应用名称；
