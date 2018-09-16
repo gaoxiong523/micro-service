@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: gateway-zuul-9527
+server:
+  port: 9527
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server7003:7003/eureka/,http://eureka-server7002:7002/eureka/,http://eureka-server7001:7001/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: gateway-zuul-9527
+zuul:
+  routes:  #路由
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**
+  ignored-services: microservicecloud-dept  #忽略原有的真实服务名,忽略所有 可以用*
+  prefix: /gaoxiong  # 统一的前缀
+ # ignored-services: "*"

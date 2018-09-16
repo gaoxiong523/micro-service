@@ -187,4 +187,35 @@ P:Partition tolerance(分区容错性)
                         include: turbine.stream
 参考网址https://blog.csdn.net/zzhou1990/article/details/79098814
 关于聚合监控,还有问题,需要解决turbine 的问题
-https://blog.csdn.net/ityouknow/article/details/72625646            
+https://blog.csdn.net/ityouknow/article/details/72625646           
+
+关于Zuul 
+什么是Zuul
+Zuul包含了对请求的路由和过滤两个最主要的功能:
+其中路由功能负责将外部请求转发到具体的微服务实例上,是实现外部访问统一入口
+的基础而过滤器功能则负责对请求的处理过程进行敢于,是实现请求校验,
+服务聚合等功能的基础,Zuul和Eureka进行整合,将Zuul自身注册为Eureka服务治理下
+的应用,同时从Eureka中获得其他微服务的消息,也即以后的访问微服务都是通过Zuul跳转
+后获得.
+
+配置映射
+before
+http://localhost:9527/microservicecloud-dept/dept/2
+@code
+zuul:
+  routes:
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**
+after:
+http://localhost:9527/mydept/dept/2
+ 
+ 
+ zuul:
+   routes:  #路由
+     mydept.serviceId: microservicecloud-dept
+     mydept.path: /mydept/**
+   ignored-services: microservicecloud-dept  #忽略原有的真实服务名,忽略所有 可以用*
+   prefix: /gaoxiong  # 统一的前缀
+   ignored-services: "*"
+   
+   
