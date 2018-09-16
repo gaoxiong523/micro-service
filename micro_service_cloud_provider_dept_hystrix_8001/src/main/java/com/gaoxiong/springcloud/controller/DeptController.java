@@ -29,7 +29,7 @@ public class DeptController {
     }
 
     @GetMapping(value = "/dept/{id}")
-//    @HystrixCommand(fallbackMethod = "processHystrix_Get")
+    @HystrixCommand(fallbackMethod = "processHystrix_Get")
     public Dept get( @PathVariable("id") Long id ) {
         Dept dept = deptService.findById(id);
         if (dept ==null) {

@@ -14,3 +14,12 @@ eureka:
       defaultZone: http://eureka-server7003:7003/eureka/,http://eureka-server7002:7002/eureka/,http://eureka-server7001:7001/eureka/
 server:
   port: 8099
+
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

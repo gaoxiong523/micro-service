@@ -142,4 +142,43 @@ P:Partition tolerance(分区容错性)
  关于Feign 的fallbackFactory 的扫描以及应该放的位置
  @ComponentScan(basePackages = {"com.gaoxiong"})
 学习过程中,当使用了 这个注解的时候会造成扫描不到controller 的现象,解决方法,扫描层级提高一级...没搞懂
+关于 feign 客户端的配置文件中开启熔断的时候 不提示的问题 是因为 Jar包中没有metadata的properties文件,
+如果想要自动提示, 可以添加进去,重新编译
   
+  Hystrix Dashboard
+  Hystrix会持续的记录所有通过Hystrix发起的请求的执行信息,并以统计报表的图形的形式展示给用户,包括美妙执行多少
+  请求多少成功,多少失败等.
+  Spring Cloud 提供了 Hystrix Dashboard的整合,对监控内容转化成可视化界面.
+   2.0 环境下,hystrix.stream 报404 的问题 在1.5下 是没问题的,在2.0下面却访问不了
+   **
+    * Streams Hystrix metrics in text/event-stream format.
+    * <p>
+    * Install by:
+    * <p>
+    * 1) Including hystrix-metrics-event-stream-*.jar in your classpath.
+    * <p>
+    * 2) Adding the following to web.xml:
+    * <pre>{@code
+    * <servlet>
+    *  <description></description>
+    *  <display-name>HystrixMetricsStreamServlet</display-name>
+    *  <servlet-name>HystrixMetricsStreamServlet</servlet-name>
+    *  <servlet-class>com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet</servlet-class>
+    * </servlet>
+    * <servlet-mapping>
+    *  <servlet-name>HystrixMetricsStreamServlet</servlet-name>
+    *  <url-pattern>/hystrix.stream</url-pattern>
+    * </servlet-mapping>
+    * } </pre>
+    */
+    根据源码中的注释说明, 我们需要在项目中配置这样一个servlet
+    ;
+    spring cloud 2.0 推荐配置
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: hystrix.stream
+参考网址https://blog.csdn.net/zzhou1990/article/details/79098814
+关于聚合监控,还有问题,需要解决terbine 的问题
+            
