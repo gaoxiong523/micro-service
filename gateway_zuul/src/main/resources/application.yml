@@ -17,3 +17,4 @@ zuul:
   ignored-services: microservicecloud-dept  #忽略原有的真实服务名,忽略所有 可以用*
   prefix: /gaoxiong  # 统一的前缀
  # ignored-services: "*"
+

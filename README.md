@@ -219,3 +219,27 @@ http://localhost:9527/mydept/dept/2
    ignored-services: "*"
    
    
+   **分布式配置中心**
+   springcloud config 为微服务架构中的微服务提供集中化的外部配置支持,配置服务器为
+   各个不同的微服务应用的所有环境提供了一个中心化的外部配置.
+   分为 服务端 和客户端两部分.
+   服务端也称为分布式配置中心,它是一个独立的微服务应用,用来链接配置服务器并为
+   客户端提供获取配置信息,加密,解密信息等访问接口
+   
+   客户端则是通过指定的配置中心来管理应用资源,以及与业务相关的配置内容,并在启动的时候
+   从配置中心获取和加载配置信息,配置服务器默认采用git来存储配置信息,这样就有助于对环境配置进行版本管理,
+   并且可以通过git客户端工具来方便的管理和访问配置内容.
+配置文件一定要以UTF-8 保存!
+配置文件一定要以UTF-8 保存!
+配置文件一定要以UTF-8 保存!
+否则会报编码错误
+  
+  
+  application.yml 是用户级的资源配置项
+  bootstrap.yml是系统级的优先级更高 
+  springcloud 会创建一个Bootstrap Context,作为Spring 应用的Application Context
+  的父上下文, 初始化的时候Bootstrap 属性有高优先级,默认情况下,他们不会被本地配置覆盖,
+  Bootstrap contex 和Application Contex 有着不同的约定.
+  所以新增了一个bootstrap.yml文件,保证BootstrapContext 和Application Context 配置的分离.
+      
+       

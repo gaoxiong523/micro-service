@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: microservice_config_client  #需要从github上读取的配置文件名称,不要yml后缀
+      profile: test #本次访问的配置项
+      label: master  #分支
+      uri: http://localhost:3344  #本服务启动后先去3344找服务,通过springcloudconfig获取github的服务地址
